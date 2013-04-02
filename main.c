@@ -12,6 +12,14 @@
 #include "endian.h"
 #include "SHA3api_ref.h"
 
+
+#define htobe32(x) \
+	((u_int32_t)( \
+			(((u_int32_t)(x) & (u_int32_t)0x000000ffUL) << 24) | \
+			(((u_int32_t)(x) & (u_int32_t)0x0000ff00UL) <<  8) | \
+			(((u_int32_t)(x) & (u_int32_t)0x00ff0000UL) >>  8) | \
+			(((u_int32_t)(x) & (u_int32_t)0xff000000UL) >> 24) ))
+
 const unsigned char BitsSetTable256[256] = 
 {
 #   define B2(n) n,     n+1,     n+1,     n+2
