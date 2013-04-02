@@ -9,7 +9,6 @@
 
 #include <sys/queue.h>
 
-#include "endian.h"
 #include "SHA3api_ref.h"
 
 
