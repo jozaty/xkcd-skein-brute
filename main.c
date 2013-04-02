@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <ctype.h>
-#include <endian.h>
 #include <pthread.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -10,6 +9,7 @@
 
 #include <sys/queue.h>
 
+#include "endian.h"
 #include "SHA3api_ref.h"
 
 const unsigned char BitsSetTable256[256] = 
