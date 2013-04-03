@@ -6,18 +6,13 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <arpa/inet.h>
 
 #include <sys/queue.h>
 
+#include "endian_extra.h"
 #include "SHA3api_ref.h"
 
-
-#define htobe32(x) \
-	((u_int32_t)( \
-			(((u_int32_t)(x) & (u_int32_t)0x000000ffUL) << 24) | \
-			(((u_int32_t)(x) & (u_int32_t)0x0000ff00UL) <<  8) | \
-			(((u_int32_t)(x) & (u_int32_t)0x00ff0000UL) >>  8) | \
-			(((u_int32_t)(x) & (u_int32_t)0xff000000UL) >> 24) ))
 
 const unsigned char BitsSetTable256[256] = 
 {
