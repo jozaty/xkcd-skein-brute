@@ -1,9 +1,19 @@
-Brute-forcer for http://almamater.xkcd.com/
+#Brute-forcer for [XKCD](http://almamater.xkcd.com/)
 
-To run:
-	make
-	./screen-nice-wrapper.sh
-	(executing main directly will not automatically submit solutions)
+This should comile on any POSIX-compliant system, and has been tested on Mac OS X 10.8 (Mountain Lion) and CentOS release 5.9 (Final).
+
+##Instructions (POSIX Systems)
+1. Download archive from [here](https://github.com/yasyf/xkcd-skein-brute/archive/master.zip)
+2. Make sure to have [Python 3](http://www.python.org/download/) installed (`apt-get install python3`,`brew install python3` or similar should work)
+3. Extract and `cd` into the master directory
+4. Run the following:
+
+```
+make
+./screen-nice-wrapper.sh
+```
+
+##Information
 
 The problem is basically hashing large swaths of key space to find
 near-collisions with a given bitstring. The better the 'near-ness', the higher
@@ -17,6 +27,7 @@ See main.c.
 Skein block performance:
 
 With GCC -O3 on this Core i7 machine, the C implementation yields:
+
     Trial 0 Skeins/sec: 667672.35
     Trial 1 Skeins/sec: 677591.17
     Trial 2 Skeins/sec: 693625.83
@@ -24,6 +35,7 @@ With GCC -O3 on this Core i7 machine, the C implementation yields:
     Trial 4 Skeins/sec: 660963.22
 
 With the assembly implementation:
+
     Trial 0 Skeins/sec: 933069.85
     Trial 1 Skeins/sec: 1338020.03
     Trial 2 Skeins/sec: 996060.88
@@ -32,3 +44,6 @@ With the assembly implementation:
 
 Unfortunately, the hashes produced by the assembly implementation seem
 incorrect. =(
+
+##Credits
+Forked from @uakfdotb's https://github.com/uakfdotb/xkcd-skein-brute.
