@@ -8,3 +8,5 @@ OBJ = SHA3api_ref.o skein_block.o skein.o skein_debug.o main.o
 main: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
 
+clean:
+	rm -f main *.o
